@@ -78,7 +78,7 @@ DROP TABLE IF EXISTS `detalles_del_producto`;
 CREATE TABLE `detalles_del_producto` (
   `productos_id_producto` int unsigned NOT NULL,
   `pedidos_id_pedido` int unsigned NOT NULL,
-  `precio` decimal(4,2) unsigned DEFAULT NULL,
+  `precio` decimal(8,2) unsigned DEFAULT NULL,
   `cantidad_total` int unsigned DEFAULT NULL,
   PRIMARY KEY (`productos_id_producto`,`pedidos_id_pedido`),
   KEY `fk_productos_has_pedidos_pedidos1_idx` (`pedidos_id_pedido`),
@@ -163,7 +163,7 @@ DROP TABLE IF EXISTS `productos`;
 CREATE TABLE `productos` (
   `id_producto` int unsigned NOT NULL AUTO_INCREMENT,
   `nombre_prod` varchar(45) DEFAULT NULL,
-  `precio` decimal(4,2) unsigned DEFAULT NULL,
+  `precio` decimal(8,2) unsigned DEFAULT NULL,
   `descripcion` varchar(255) DEFAULT NULL,
   `id_categoria` int unsigned DEFAULT NULL,
   `fecha_creacion` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
